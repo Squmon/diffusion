@@ -1,4 +1,6 @@
 import tensorflow as tf
+import keras
+import keras.layers as layers
 
 def forward_ddpm(x, beta_start = 0.0001, beta_end = 0.02, time = None):
   if time is None:
@@ -15,3 +17,8 @@ def forward_ddpm(x, beta_start = 0.0001, beta_end = 0.02, time = None):
   
   time_tensor = tf.reshape(time, [1])
   return time_tensor, noised_x, noise
+
+def mlp(layers_dims:list[int], activation = 'leaky_relu'):
+  return keras.Sequential(
+    [layers.Dense(l, activation=activation) for l in layers_dims]
+  )
