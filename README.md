@@ -1,1 +1,0 @@
-this repository created to learn diffusion technics
