@@ -1,2 +1,3 @@
 .venv
 .vscode
+score_based_toy_dataset/score_based_general_framework/__pycache__/
